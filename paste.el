@@ -11,7 +11,6 @@
 ;; Package-Requires: ((emacs "26") (request "")
 
 (require 'request)
-(require 'pass)
 (require 'json)
 
 ;;;###autoload
@@ -24,7 +23,7 @@
   :group 'paste
   :type '(repeat string))
 
-(defcustom paste-encrypted-content ()
+(defcustom paste-encryption-algorithm ()
   "Encrypt the content before uploading to external service"
   :group 'paste
   ;; 'gpg 'pass nil
@@ -158,6 +157,14 @@
 	   (message "url: %S" target-url)
 	   (kill-new target-url)))))))
 
+
+;; curl -X POST -d 'api_dev_key=YOUR API DEVELOPER KEY' \
+;;              -d 'api_paste_code=test' \
+;;              -d 'api_option=paste'
+;;              "https://pastebin.com/api/api_post.php"
+;;
+(defun paste-pastebin (url filename text-content)
+  "")
 
 ;; echo "hello world" | ipfs files write --create --truncate --parents "/gists/$USER_NAME/$(date -I"minutes")-hello.txt"
 ;; ipfs files stat "/gists/$USER_NAME/2022-05-15T14:49+07:00-hello.txt" --hash

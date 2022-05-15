@@ -1,0 +1,13 @@
+* paste.el
+
+** Overview
+
+Another ~pastebin~ Plugin Integration for Emacs. I create this library for exercising ~elisp~ scripting language
+but also want to replace ~webpaste.el~ in my configuration with plugin that aware of authorization from either
+~auth-source~, ~pass~, ~netrc~ or ~custom function~.
+
+** Development
+
+- [TODO] implement all basic functionallity
+- [TODO] Add a way to encrypt the content before uploading to the service
+- [TODO] Supports uploading to your local ipfs (pinned).
